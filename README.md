@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Stocks Watchlist is intended to give you trading ideas based off of 1 premise.  The market is always right.  
+
+Stocks that are most tweeted about are shown.  In addition, a selection of 10 stocks have been selected based on a custom criteria.  These stocks have a high likelihood of big change in price because of increased activity.
+
+You can also query small details about the stocks including a summary of the company, price history and market cap.
 
 ## Development
 
