@@ -1,10 +1,8 @@
 require_relative "../lib/scraper.rb"
 require_relative "../lib/stock.rb"
-require 'nokogiri'
 require 'colorize'
-require 'pry'
 
-class CommandLineInteface
+class CommandLineInterface
   def run
     welcome_message
     trending_stocks
