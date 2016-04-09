@@ -53,5 +53,3 @@ class Scraper
     {open: open, range: range, market_cap: market_cap, eps: eps}
   end
 end
-
-scraper = Scraper.scrape_trending_stock

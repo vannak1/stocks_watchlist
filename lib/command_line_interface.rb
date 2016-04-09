@@ -6,10 +6,10 @@ class CommandLineInterface
   def run
     welcome_message
     trending_stocks
-    lookup_stocks
+    get_stocks
     get_stock_details
     display_stocks
-    ticker_detail
+    stock_ticker_detail
   end
 
   def welcome_message
@@ -33,7 +33,7 @@ class CommandLineInterface
     puts "-----------------------------------------------------------"
   end
 
-  def lookup_stocks
+  def get_stocks
     stocks_arr = Scraper.scrape_filtered_stock
     Stock.create_from_collection(stocks_arr)
   end
@@ -45,13 +45,13 @@ class CommandLineInterface
     end
   end
 
-  def stock_detailer(ticker) #rename
+  def stock_details_adder(ticker) #rename
     stock = Stock.new(ticker: ticker)
     attributes = Scraper.scrape_stock_details(ticker)
     stock.add_stock_attributes(attributes)
   end
 
-  def ticker_detail
+  def stock_ticker_detail
     puts " "
     puts "Would you like more details on a stock?"
     print "Enter Y or N: "
@@ -60,10 +60,10 @@ class CommandLineInterface
     if answer == 'Y' or answer == 'y'
       puts "Enter any ticker: (Does not have to be from the list.)"
       ticker = gets.chomp
-      display_details(stock_detailer(ticker))
+      display_details(stock_details_adder(ticker))
       puts " "
       
-      ticker_detail
+      stock_ticker_detail
     else
       puts "Have a posperous day!".colorize(:green)
     end
